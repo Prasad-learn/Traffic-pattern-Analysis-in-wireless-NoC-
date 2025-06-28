@@ -1,0 +1,72 @@
+Random 10 Selection Algorithm
+
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Traffic {
+public:
+void MPEG4_traffic(int source_id, int num_cores, vector<int> &destinations, vector<int> 
+&packet_sizes);
+};
+
+void Traffic::MPEG4_traffic(int source_id, int num_cores, vector<int> &destinations, 
+vector<int> &packet_sizes) {
+enum FrameType { I_FRAME, P_FRAME, B_FRAME, X_FRAME };
+FrameType frame = static_cast<FrameType>(rand() % 4); 
+srand(static_cast<unsigned int>(time(0))); 
+int packet_size;
+vector<int> router_10(10);
+for (int i = 0; i < 10; i++) {
+router_10[i] = rand() % num_cores; 
+}
+
+for(auto i:router_10){
+cout<<i<<" ";
+}
+
+cout<<endl;
+switch (frame) {
+case I_FRAME:
+packet_size = 1024; 
+break;
+case P_FRAME:
+packet_size = 512; 
+break;
+case B_FRAME:
+packet_size = 256; 
+break;
+case X_FRAME: 
+packet_size = 128; 
+break;
+}
+
+if (rand() % 2 == 0) { 
+int dest1 = rand() % num_cores;
+int dest2 = rand() % num_cores;
+destinations.push_back(router_10[dest1]);
+destinations.push_back(router_10[dest2]);
+} else { 
+int dest = rand() % num_cores;
+destinations.push_back(router_10[dest]);
+}
+packet_sizes.push_back(packet_size);
+cout << "Source: " << source_id 
+<< " -> Destinations: ";
+for (int dest : destinations) {
+cout << dest << " ";
+}
+cout << ", Packet Size: " << packet_size << endl;
+}
+
+int main() {
+Traffic traffic;
+vector<int> destinations;
+vector<int> packet_sizes;
+int source_id = 1; 
+int num_cores = 64; 
+traffic.MPEG4_traffic(source_id, num_cores, destinations, packet_sizes);
+return 0;
+}

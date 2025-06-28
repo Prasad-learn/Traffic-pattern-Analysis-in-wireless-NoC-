@@ -1,0 +1,79 @@
+INTRODUCTION ABOUT NoC
+A Network-on-Chip (NoC) is a system that connects different parts of a 
+computer chip, like processors and memory, so they can talk to each other. It 
+uses small, fast paths to send data instead of long wires. NoC helps improve the 
+performance of chips, especially when there are many components, like in 
+modern multi-core processors.
+
+Advantages of Network-on-Chip (NoC): 
+
+Scalability: NoC allows easy addition of more components (like processors or 
+memory) without significant performance loss, making it ideal for complex 
+chips. "Efficiency: It improves communication speed and reduces power 
+consumption compared to traditional wiring methods.
+Modularity: Different parts of the chip can communicate independently, 
+which makes design and troubleshooting easier.
+
+Disadvantages of Network-on-Chip (NoC): 
+
+Complex Design: Designing and managing the network can be complicated and 
+time-consuming. "Cost: Implementing NoC on a chip can increase 
+manufacturing costs due to the additional components and design complexity. 
+"Latency": While NoC improves communication, it can still introduce some 
+delay compared to direct connections between components.
+Wireless Network-on-Chip (WiNoC): is a type of NoC where the 
+communication between components on the chip is done wirelessly instead of 
+using traditional wired connections. Wireless Communication: Data is 
+transmitted using electromagnetic waves (like radio signals) between 
+components rather than through physical wires. "Reduced Wires: This design 
+reduces the complexity of wiring, especially as the number of components 
+increases. "Flexibility": Wireless communication allows components to 
+communicate without being directly connected by physical paths, offering more 
+flexible chip designs.
+
+How Wireless NoC Differs from Wired NoC
+
+Wired NoC
+
+1. Communication: 
+    Uses physical wires for data transfer.Paths are fixed based on the wiring layout. 
+2. Power Consumption: 
+    Requires higher power to transmit signals over wires. 
+3. Scalability: 
+    Difficult to scale due to the increasing complexity of wiring as the network 
+    grows. 
+4. Latency: 
+    Typically lower latency since signals travel directly through wires. 
+
+Wireless NoC (WiNoC) 
+
+1. Communication:
+    Uses wireless signals (e.g., radio waves) for data transfer. 
+    No physical connections are required between nodes. 
+2. Flexibility: 
+    More flexible as components can communicate without direct wiring. 
+3. Power Consumption: 
+    More power-efficient, especially for long-range communication. 
+4. Scalability: 
+    Easier to scale as it eliminates the need for additional wires when the network 
+    size increases. 
+5. Latency: 
+    May have higher latency due to signal propagation delays and potential 
+    interference. 
+
+Building Blocks of NoC
+
+1. Link 
+    Connects two routers in the network. 
+    Can be physical (wired) or logical (wireless) channels. 
+2. Buffer 
+    Temporarily stores packets when congestion occurs and prevents immediate 
+    forwarding. Ensures smooth traffic flow. 
+3. Flow Control 
+    Manages the movement of packets
+    Global Movement: Ensures packets are routed across the entire network 
+                    efficiently.
+    Local Movement: Controls packet transfer between adjacent nodes. 
+4. Router 
+    Contains input and output ports, a switching matrix, and a local port to connect 
+    to the IP core.Includes logic blocks to handle routing, arbitration, and data flow control.

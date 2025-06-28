@@ -1,2 +1,1 @@
-# Traffic-pattern-Analysis-in-wireless-NoC-
-Analyzed existing traffic patterns in a Wireless Network-on-Chip (NoC) by varying key  characteristics such as packet size, injection rate, and topology.Designed and implemented  custom traffic pattern logic based on observations and performance metrics.
+Analyzed existing traffic patterns in a Wireless Network-on-Chip (NoC) by varying key characteristics such as packet size, injection rate, and topology.Designed and implemented custom traffic pattern logic based on observations and performance metrics.Simulated the traffic behavior using a C++ compiler to evaluate latency, throughput, and network efficiency.

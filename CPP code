@@ -1,0 +1,48 @@
+//Developed Algorithm for Destination :
+
+//37% random Selection Algorithm
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+using namespace std;
+void MPEG4_traffic(int source_id, int num_cores) {
+enum FrameType { I_FRAME, P_FRAME, B_FRAME, X_FRAME };
+srand(static_cast<unsigned int>(time(0))); 
+FrameType frame = static_cast<FrameType>(rand() % 4);
+int packet_size;
+
+switch (frame) {
+case I_FRAME: packet_size = 1024; break;
+case P_FRAME: packet_size = 512; break; 
+case B_FRAME: packet_size = 256; break; 
+case X_FRAME: packet_size = 128; break; 
+}
+
+vector<int> destinations(num_cores);
+
+for (int i = 0; i < num_cores; i++) {
+destinations[i] = i; 
+}
+
+random_shuffle(destinations.begin(), destinations.end());
+int num_to_reject = static_cast<int>(0.37 * num_cores);
+int selected_destination = -1;
+
+for (int i = num_to_reject; i < num_cores; i++) {
+selected_destination = destinations[i];
+break;
+}
+cout << "Source Core: " << source_id << endl;
+cout << "Selected Destination: " << selected_destination << endl;
+cout << "Packet Size: " << packet_size << " bytes" << endl;
+}
+
+int main() {
+int source_id = 0; 
+int num_cores = 64; 
+MPEG4_traffic(source_id, num_cores);
+return 0;
+}
